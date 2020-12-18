@@ -1,10 +1,26 @@
 export class Satellite {
-    constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean) {
-    
-    // name: string;
-    // orbitType: string;
-    // type: string;
-    // operational: boolean;
-    // launchDate: string;
-    }
-}
+    name: string;
+    orbitType: string;
+    type: string;
+    operational: boolean;
+    launchDate: string;
+
+    constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean) 
+    {
+    this.name = name;
+    this.type = type;
+    this.orbitType = orbitType;
+    this.operational = operational;
+    this.launchDate = launchDate 
+    };
+
+    shouldShowWarning(): boolean{
+        let warning: boolean;
+        if (this.type.toLowerCase() === "space debris") {
+        warning = true
+        } else {
+        warning = false
+    };
+    return warning;
+    };
+};
